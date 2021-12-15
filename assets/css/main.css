@@ -2091,7 +2091,7 @@ form label {
 		}
 
 		.homepage #header {
-			height: 35em;
+			height: 24em;
 		}
 
 /* Logo */
@@ -2226,12 +2226,12 @@ form label {
 /* Intro */
 
 	#intro {
-		padding-bottom: 8em;
+		padding-bottom: 4em;
 		text-align: center;
 	}
 
 		#intro p.style1 {
-			font-size: 1.5em;
+			font-size: 1.2em;
 			letter-spacing: 0.075em;
 		}
 
@@ -2253,7 +2253,7 @@ form label {
 			}
 
 		#intro p.style3 {
-			font-size: 1.1em;
+			font-size: 1em;
 			width: 48em;
 			margin: 0 auto;
 		}
