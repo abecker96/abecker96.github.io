@@ -1,0 +1,270 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aidan Becker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="https://github.com/abecker96/CG_Assignment3">3D 'Cloth'</a></h1>
+							<p>A C++ and OpenGL project that randomly generates cloth-like geometry.</p>
+							<ul class="actions">
+								<li><a href="https://github.com/abecker96/CG_Assignment3" class="button style1">Github page</a></li>
+							</ul>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Home</a></li>
+							<!-- TODO: Links to github, what else?-->
+							<li><a href="index.html#resume">Resume</a></li>
+							<li>
+								<a href="projects.html">Projects on GitHub</a>
+								<ul>
+									<li><a href="ciphercomm.html">DES Encrypted Messaging App</a></li>
+									<li><a href="producerconsumer.html">Producer/Consumer Solution</a></li>
+									<li><a href="sortingvisualizations.html">Sorting Algorithm Visualizations</a></li>
+									<!--
+                            <li><a href="#">Etiam nisl</a></li>
+                            <li>
+                                <a href="#">Sed consequat</a>
+                                <ul>
+                                    <li><a href="#">Lorem dolor</a></li>
+                                    <li><a href="#">Amet consequat</a></li>
+                                    <li><a href="#">Magna phasellus</a></li>
+                                    <li><a href="#">Etiam nisl</a></li>
+                                    <li><a href="#">Sed feugiat</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Nisl tempus</a></li>
+                            -->
+								</ul>
+							</li>
+							<li><a href="#contact">Contact Info</a></li>
+						</ul>
+					</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<!--<div class="title">No Sidebar</div>-->
+					<div class="container">
+
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<!-- This all gets hidden on mobile anyways, so nothing important should go here
+									<header class="style1">
+										<h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
+										morbi bibendum sed malesuada</h2>
+										<p>Tempus feugiat veroeros sed nullam dolore</p>
+									</header>
+									-->
+									<p>A 3D application developed for my Computer Graphics class.</p>
+									<a href="https://github.com/abecker96/CG_Assignment3" class="image featured">
+										<img src="images/cloth.gif" alt="" />
+									</a>
+									<p>The algorithm for this is simple iterative midpoint displacement. When implemented in 2D, the resulting geometry has a tendency to 
+										resemble a <a href=https://en.wikipedia.org/wiki/Fractal_landscape>3D mountain.</a> Here is an animated gif of the algorithm, credit to António Miguel de Campos and wikipedia:
+									</p>
+									<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Animated_fractal_mountain.gif" alt="The iterative midpoint displacement algorithm in action"/>
+									<p>This worked well in 2D, and below is an example of my implementation.</p>
+									<img src="images/2dLandscape.png" alt="2D implementation" width="50%" height="50%"/>
+									<p>An important thing to note here is that despite the appearance 3D geometry, this is nothing more than an illusion. 
+										Any significant motion in this scene causes that illusion to break, so I was interested in the results if this were to be implemented in 3D. 
+										Unfortunately I found the results to be a lot less like the terrain that I was hoping for, either resulting in a mesh that is too uniform or something 
+										far more similar to a crumpled piece of cloth than a true mountain. 
+										However, I still believe the end result looks quite satisfying.
+									</p>
+									<div class="container">
+										<div class="row aln-center">
+											<div class="col-4 col-12-medium">
+												<div class="highlight">
+													<img src="images/3dTooUniform.png" alt="Adjusting parameters can create some interesting effects." width="100%" height="100%"/>
+												</div>
+											</div>
+											<div class="col-4 col-12-medium">
+												<div class="highlight">
+													<img src="images/3dCrumpledCloth.png" alt="My personal favorite parameters create something similar to a crumpled piece of paper." width="100%" height="100%"/>
+												</div>
+											</div>
+										</div>
+									</div>
+									<p>Tools utilized: C++, OpenGL, GLEW, GLFW, GLM</p>
+									<p></p>
+								</article>
+							</div>
+
+					</div>
+				</div>
+
+
+			<!-- Highlights -->
+			<!--
+				<section id="highlights" class="wrapper style3">
+					<div class="title">The Endorsements</div>
+					<div class="container">
+						<div class="row aln-center">
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<h3><a href="#">Aliquam diam consequat</a></h3>
+									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+									<ul class="actions">
+										<li><a href="#" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+									<ul class="actions">
+										<li><a href="#" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+									<h3><a href="#">Mattis tempus lorem</a></h3>
+									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+									<ul class="actions">
+										<li><a href="#" class="button style1">Learn More</a></li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+			-->
+			<!-- Footer -->
+			</section>
+			<div id="contact"></div>
+			<!-- Footer -->
+			<section id="footer" class="wrapper">
+				<div class="container">
+					<header class="style1">
+						<h2>Need to get in touch with me?</h2>
+						<p>
+							Here's a list of ways to get in contact with me. <br />
+							You can even send a message right from this page, and I'll
+							get back to you as soon as I can.
+						</p>
+					</header>
+					<div class="row">
+						<div class="col-6 col-12-medium">
+
+							<!-- Contact Form -->
+							<section>
+								<form method="post" action="#">
+									<div class="row gtr-50">
+										<div class="col-6 col-12-small">
+											<input type="text" name="name" id="contact-name" placeholder="Name" />
+										</div>
+										<div class="col-6 col-12-small">
+											<input type="text" name="email" id="contact-email" placeholder="Email" />
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
+										</div>
+
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" class="style1" value="Send" /></li>
+												<li><input type="reset" class="style2" value="Reset" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+
+						</div>
+						<div class="col-6 col-12-medium">
+
+							<!-- Contact -->
+							<section class="feature-list small">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon solid fa-home">Location</h3>
+											<p>
+												Corpus Christi<br />
+												Texas, 78412
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<!-- TODO: Make Social Media-->
+											<h3 class="icon solid fa-comment">Social</h3>
+											<p>
+												<a href="https://twitter.com/AidanCSB">Twitter</a><br />
+												<a href="https://www.linkedin.com/in/aidan-becker">LinkedIn</a><br />
+												<a href="https://www.facebook.com/aidan.becker.9">Facebook</a><br />
+
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon solid fa-envelope">Email</h3>
+											<p>
+												<a href="BeckerAidan9@gmail.com">BeckerAidan9@gmail.com</a>
+												<a href="https://github.com/abecker96">GitHub</a>
+											</p>
+										</section>
+									</div>
+									<div class="col-6 col-12-small">
+										<section>
+											<h3 class="icon solid fa-phone">Phone</h3>
+											<p>
+												(512) 912-6179
+											</p>
+										</section>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</div>
+					<div id="copyright">
+						<ul>
+							<!--TODO: copyright lmao-->
+							<!--<li>&copy; Untitled.</li>-->
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
