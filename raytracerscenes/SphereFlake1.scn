@@ -1,0 +1,89 @@
+background 0.078 0.361 0.753
+view 2000 0.198912
+light 0.57735 0.57735 0.57735  4 3 2
+light 0.57735 0.57735 0.57735  1 -4 4
+light 0.57735 0.57735 0.57735  -3 1 5
+move 0 0 -4.7
+rotate 80 0 0 1
+
+
+supersample 8
+#move -2.1 -1.3 -1.7
+#eyep 2.1 1.3 1.7
+#lookp 0 0 0
+#up 0 0 1
+#fov 45 45
+#screen 512 512
+#z = 0 0 1 
+#v = -0.700389 -0.433574 -0.566982 
+#vXz = -0.526355 0.850265 0 
+#v.z = -0.566982 
+#acos 2.17363 
+#angle 124.54 
+#move -2.1 -1.3 -1.7
+#rotate 124.54 -0.526355 0.850265 0
+#rotate 30.54 -0.526355 0.850265 0
+#rotate 60 0 1 0
+material 0.8 0.6 0.264 0 0 0 100000
+group
+move 0 0 -.5
+scale 102 102 .00005
+sphere
+groupend
+
+## Vertex 12 12 -0.5
+## Vertex -12 12 -0.5
+## Vertex -12 -12 -0.5
+## Vertex 12 -12 -0.5
+## Polygon 4 1 2 3 4
+material 0.5 0.45 0.35 0.8 0.8 0.8 100
+group
+move 0 0 0
+scale 0.5 0.5 0.5
+sphere
+groupend
+group
+move 0.272166 0.272166 0.544331
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move 0.643951 0.172546 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move 0.172546 0.643951 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move -0.371785 0.0996195 0.544331
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move -0.471405 0.471405 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move -0.643951 -0.172546 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move 0.0996195 -0.371785 0.544331
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move -0.172546 -0.643951 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
+group
+move 0.471405 -0.471405 1.11022e-16
+scale 0.166667 0.166667 0.166667
+sphere
+groupend
