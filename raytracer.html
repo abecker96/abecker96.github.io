@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>Aidan Becker</title>
+    <title>Aidan Becker Ray Tracer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -21,10 +21,10 @@
 
             <!-- Logo -->
             <div id="logo">
-                <h1><a href="https://github.com/abecker96/CG_Assignment3">3D 'Cloth'</a></h1>
-                <p>A C++ and OpenGL project that randomly generates cloth-like geometry.</p>
+                <h1><a href="#">Recursive Ray Tracer</a></h1>
+                <p>A C++ implementation of a recursive ray tracer.</p>
                 <ul class="actions">
-                    <li><a href="https://github.com/abecker96/CG_Assignment3" class="button style1">Github page</a></li>
+                    <li><a href="https://github.com/abecker96/RayTracer" class="button style1">Github page</a></li>
                 </ul>
             </div>
 
@@ -66,35 +66,19 @@
 										<p>Tempus feugiat veroeros sed nullam dolore</p>
 									</header>
 									-->
-                        <p>A 3D application developed for my Computer Graphics class.</p>
-                        <a href="https://github.com/abecker96/CG_Assignment3" class="image featured">
-                            <img src="images/cloth.gif" alt="" />
+                        <p>A multi-threaded recursive ray tracer developed for my Computer Graphics class.</p>
+                        <a href="https://github.com/abecker96/RayTracer" class="image featured">
+                            <img src="images/sphereflake3.jpg" alt="A 2000x2000 pixel rendering of a 3rd level SphereFlake." />
                         </a>
-                        <p>The algorithm for this is simple iterative midpoint displacement. When implemented in 2D, the resulting geometry has a tendency to resemble a <a href=https://en.wikipedia.org/wiki/Fractal_landscape>3D mountain.</a> Here is an animated
-                            gif of the algorithm, credit to António Miguel de Campos and wikipedia:
+                        <p>This ray tracer takes <a href="http://paulbourke.net/dataformats/scn/">basic .scn files</a> as input, and outputs .ppm images.</p>
+                        <p>Currently, the only supported object is a sphere, but all ray-sphere intersections are performed in object-space allowing for non-uniform transformations like the ground "plane" shown in the scene below.
                         </p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Animated_fractal_mountain.gif" alt="The iterative midpoint displacement algorithm in action" />
-                        <p>This worked well in 2D, and below is an example of my implementation.</p>
-                        <img src="images/2dLandscape.png" alt="2D implementation" width="50%" height="50%" />
-                        <p>An important thing to note here is that despite the appearance 3D geometry, this is nothing more than an illusion. Any significant motion in this scene causes that illusion to break, so I was interested in the results if this were
-                            to be implemented in 3D. Unfortunately I found the results to be a lot less like the terrain that I was hoping for, either resulting in a mesh that is too uniform or something far more similar to a crumpled piece of cloth than
-                            a true mountain. However, I still believe the end result looks quite satisfying.
-                        </p>
-                        <div class="container">
-                            <div class="row aln-center">
-                                <div class="col-4 col-12-medium">
-                                    <div class="highlight">
-                                        <img src="images/3dTooUniform.png" alt="Adjusting parameters can create some interesting effects." width="100%" height="100%" />
-                                    </div>
-                                </div>
-                                <div class="col-4 col-12-medium">
-                                    <div class="highlight">
-                                        <img src="images/3dCrumpledCloth.png" alt="My personal favorite parameters create something similar to a crumpled piece of paper." width="100%" height="100%" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Tools utilized: C++, OpenGL, GLEW, GLFW, GLM</p>
+                        <a href="https://github.com/abecker96/RayTracer" class="image featured">
+                            <img src="images/rayTracerTestScene.jpg" alt="A 2000x2000 pixel rendering of the test scene used in this class." />
+                        </a>
+                        <p>Future works on this project include: Fixing refraction calculations, adding more object types, support for textures, and full support for various input and output filetypes.</p>
+                        <a href="raytracerscenes/">Working example .scn files can be found here</a>
+                        <p>Tools utilized: C++</p>
                         <p></p>
                     </article>
                 </div>
