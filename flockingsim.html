@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <title>Aidan Becker</title>
+    <title>Aidan Becker Flocking Sim</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -21,10 +21,10 @@
 
             <!-- Logo -->
             <div id="logo">
-                <h1><a href="https://github.com/abecker96/CG_Assignment3">3D 'Cloth'</a></h1>
-                <p>A C++ and OpenGL project that randomly generates cloth-like geometry.</p>
+                <h1><a href="https://github.com/abecker96/FlockingSim">Flocking Simulator</a></h1>
+                <p>An HMTL5 Canvas and JavaScript project to emulate flocking behavior.</p>
                 <ul class="actions">
-                    <li><a href="https://github.com/abecker96/CG_Assignment3" class="button style1">Github page</a></li>
+                    <li><a href="https://github.com/abecker96/FlockingSim" class="button style1">Github page</a></li>
                 </ul>
             </div>
 
@@ -55,7 +55,17 @@
         <div id="main" class="wrapper style2">
             <!--<div class="title">No Sidebar</div>-->
             <div class="container">
-
+                <p>Actual integration of this into the website is still in progress, but in the meantime <a href="part2.html">here</a> is the initial version.</p>
+                <p>This is an early attempt at an implementation of <a href="https://www.red3d.com/cwr/boids/">flocking behavior</a>, sometimes referred to as boids.<br/> I would like to remake the logic in the future, because this current implementation
+                    is very buggy.<br/> This project was my first introduction to 2D graphics, and I did not have enough time to research before attempting to implement this. However, it does look quite interesting at first glance.
+                </p>
+                <p>Future works on this will likely start with a replacement of the Boid class's data members to include a position and a directional vector. Various separation, alignment, and cohesion coefficients will be refactored to apply to the various
+                    Boid "species" as opposed to individual Boid instances. Inheritance will be very useful here to define distinct species, while polymorphism would allow for some Boids to be predators, producers, workers, or some other variation. Implementation
+                    of a quadtree is high on the priority list for performance reasons, reducing lookup times for all Boids finding a flock from an O(n^2) algorithm to O(nlogn) algorithm.
+                </p>
+                <p>
+                    Perhaps more interestingly, a rewrite would allow me to utilize the 3D capabilities of HTML5, and this could become a 3D simulation relatively easily on the next iteration. In a 3D environment the theoretical quadtree would need to evolve into an octree.<br/>                    The potential of writing this program in OpenGL so all logic can be carried out in a compute shader is enticing as well, but compute shaders are currently only supported on specific experimental versions of most web browsers.
+                </p>
                 <!-- Content -->
                 <div id="content">
                     <article class="box post">
@@ -66,36 +76,7 @@
 										<p>Tempus feugiat veroeros sed nullam dolore</p>
 									</header>
 									-->
-                        <p>A 3D application developed for my Computer Graphics class.</p>
-                        <a href="https://github.com/abecker96/CG_Assignment3" class="image featured">
-                            <img src="images/cloth.gif" alt="" />
-                        </a>
-                        <p>The algorithm for this is simple iterative midpoint displacement. When implemented in 2D, the resulting geometry has a tendency to resemble a <a href=https://en.wikipedia.org/wiki/Fractal_landscape>3D mountain.</a> Here is an animated
-                            gif of the algorithm, credit to António Miguel de Campos and wikipedia:
-                        </p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Animated_fractal_mountain.gif" alt="The iterative midpoint displacement algorithm in action" />
-                        <p>This worked well in 2D, and below is an example of my implementation.</p>
-                        <img src="images/2dLandscape.png" alt="2D implementation" width="50%" height="50%" />
-                        <p>An important thing to note here is that despite the appearance 3D geometry, this is nothing more than an illusion. Any significant motion in this scene causes that illusion to break, so I was interested in the results if this were
-                            to be implemented in 3D. Unfortunately I found the results to be a lot less like the terrain that I was hoping for, either resulting in a mesh that is too uniform or something far more similar to a crumpled piece of cloth than
-                            a true mountain. However, I still believe the end result looks quite satisfying.
-                        </p>
-                        <div class="container">
-                            <div class="row aln-center">
-                                <div class="col-4 col-12-medium">
-                                    <div class="highlight">
-                                        <img src="images/3dTooUniform.png" alt="Adjusting parameters can create some interesting effects." width="100%" height="100%" />
-                                    </div>
-                                </div>
-                                <div class="col-4 col-12-medium">
-                                    <div class="highlight">
-                                        <img src="images/3dCrumpledCloth.png" alt="My personal favorite parameters create something similar to a crumpled piece of paper." width="100%" height="100%" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Tools utilized: C++, OpenGL, GLEW, GLFW, GLM</p>
-                        <p></p>
+
                     </article>
                 </div>
 
