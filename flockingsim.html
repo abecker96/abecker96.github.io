@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -6,11 +6,37 @@
     <title>Flocking Sim - Aidan Becker</title>
     <link rel="stylesheet" href="assets/css/professional.css" />
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .demo-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(56,189,248,0.12);
+            margin: 2rem 0;
+            background: #121212;
+        }
+        .demo-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        .demo-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
+
 <nav id="topnav">
     <div class="nav-inner">
-        <a href="index.html" class="nav-logo">A<span>.</span>Becker</a>
+        <a href="index.html" class="nav-logo">Aidan Becker</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html#about">About</a>
             <a href="index.html#experience">Experience</a>
@@ -24,7 +50,9 @@
         </button>
     </div>
 </nav>
+
 <section id="hero" style="min-height:30vh;">
+    <canvas id="spaceCanvas" class="space-canvas"></canvas>
     <div class="container hero-content">
         <p class="hero-greeting"><a href="index.html#projects" style="color:var(--accent);">&larr; Back to Projects</a></p>
         <h1 class="hero-name">Browser Flocking Simulator</h1>
@@ -33,9 +61,6 @@
             <a href="https://github.com/abecker96/FlockingSim" class="btn btn-primary" target="_blank">
                 <i class="fab fa-github"></i> View on GitHub
             </a>
-            <a href="part2.html" class="btn btn-outline">
-                <i class="fas fa-play"></i> Live Demo
-            </a>
         </div>
     </div>
 </section>
@@ -43,9 +68,24 @@
 <section class="project-detail">
     <div class="container">
         <div class="project-detail-body">
+            <p class="demo-label"><i class="fas fa-play-circle"></i> Live Demo</p>
+            <div class="demo-wrapper">
+                <iframe src="part2.html" title="Flocking Simulator Live Demo" loading="lazy"></iframe>
+            </div>
+            <p style="font-size:0.8rem;color:var(--slate-400);margin-top:-0.5rem;margin-bottom:2rem;">
+                Use the control panel inside the demo to adjust boid count, speed, flocking range, and behavior parameters.
+                Move your mouse inside the demo to interact with the boids.
+            </p>
+
             <p>An early implementation of <a href="https://www.red3d.com/cwr/boids/">flocking behavior</a> (boids). This was a first introduction to 2D graphics and emergent AI behavior.</p>
-            <p>The current implementation demonstrates separation, alignment, and cohesion forces applied to multiple species of boids. While functional, the system has known limitations that a future rewrite would address.</p>
-            <p>Planned improvements include replacing the internal data model with proper position/direction vectors, applying per-species coefficients for behavior tuning, implementing a quadtree for O(n log n) neighbor lookups instead of the current O(n&sup2;) approach, and potentially moving to 3D using WebGL or OpenGL compute shaders.</p>
+            <p>The simulation demonstrates three core boid rules:</p>
+            <ul style="list-style:disc;padding-left:1.5rem;margin-bottom:1.25rem;">
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Separation</strong> &mdash; steer to avoid crowding nearby boids</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Alignment</strong> &mdash; steer towards the average heading of nearby boids</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Cohesion</strong> &mdash; steer toward the average position of nearby boids</li>
+            </ul>
+            <p>The control panel offers toggles for alternative calculation methods for each rule, along with color-specific flocking, wall avoidance, mouse interaction, trail effects, and more.</p>
+            <p>Planned improvements include proper position/direction vector models, per-species behavior coefficients, quadtree-based O(n log n) neighbor lookups, and a potential 3D rewrite using WebGL or compute shaders.</p>
             <div class="timeline-tags">
                 <span class="tag">JavaScript</span>
                 <span class="tag">HTML5 Canvas</span>
@@ -55,6 +95,7 @@
         </div>
     </div>
 </section>
+
 <footer>
     <div class="container">
         <p>&copy; 2026 Aidan Becker. Built with purpose.</p>
@@ -70,5 +111,6 @@
         });
     });
 </script>
+<script src="assets/js/space-bg.js"></script>
 </body>
 </html>

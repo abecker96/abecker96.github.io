@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
 <!-- NAVIGATION -->
 <nav id="topnav">
     <div class="nav-inner">
-        <a href="#hero" class="nav-logo">A<span>.</span>Becker</a>
+        <a href="#hero" class="nav-logo">Aidan Becker</a>
         <div class="nav-links" id="navLinks">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
@@ -30,6 +30,7 @@
 
 <!-- HERO -->
 <section id="hero">
+    <canvas id="spaceCanvas" class="space-canvas"></canvas>
     <div class="container hero-content">
         <p class="hero-greeting">Aerospace Software Engineer</p>
         <h1 class="hero-name">Aidan Becker</h1>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="detail-card">
                     <div class="label">Location</div>
-                    <div class="value">Corpus Christi, TX</div>
+                    <div class="value">Grand Rapids, MI</div>
                 </div>
             </div>
         </div>
@@ -111,9 +112,9 @@
 
             <!-- Current Role -->
             <div class="timeline-item current">
-                <div class="timeline-date">2022 &mdash; Present</div>
-                <h3 class="timeline-role">Software Engineer I</h3>
-                <p class="timeline-company">L3Harris Technologies &bull; Corpus Christi, TX</p>
+                <div class="timeline-date">2025 &mdash; Present</div>
+                <h3 class="timeline-role">Software Engineer II</h3>
+                <p class="timeline-company">Belcan, LLC (a Cognizant company), contracted to Collins Interiors &bull; Grand Rapids, MI</p>
                 <div class="timeline-body">
                     <ul>
                         <li>
@@ -166,9 +167,9 @@
 
             <!-- Previous Role -->
             <div class="timeline-item">
-                <div class="timeline-date">Jan 2022 &mdash; Aug 2022</div>
+                <div class="timeline-date">Jan 2021 &mdash; 2025</div>
                 <h3 class="timeline-role">Software Engineer I</h3>
-                <p class="timeline-company">Belcan, LLC (contracted to L3Harris) &bull; Corpus Christi, TX</p>
+                <p class="timeline-company">Belcan, LLC, contracted to Collins Interiors &bull; Grand Rapids, MI</p>
                 <div class="timeline-body">
                     <ul>
                         <li>
@@ -396,7 +397,7 @@
                         <span class="tag">Simulation</span>
                     </div>
                     <div class="project-links">
-                        <a href="flockingsim.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="flockingsim.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <a href="https://github.com/abecker96/FlockingSim"><i class="fab fa-github"></i> Source</a>
                     </div>
                 </div>
@@ -419,6 +420,23 @@
                 </div>
             </div>
 
+            <div class="project-card">
+                <img class="project-thumb" src="images/sorting.png" alt="Sorting algorithm visualization" />
+                <div class="project-info">
+                    <h3>Sorting Visualizations</h3>
+                    <p>Interactive visualizations of classic sorting algorithms rendered on HTML5 Canvas with step-by-step animation.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 Canvas</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="sortingvisualizations.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/abecker96/Sorting_visualizations"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -428,6 +446,16 @@
     <div class="container">
         <p class="section-label">Education</p>
         <h2 class="section-title">Academic Background</h2>
+
+        <div class="education-card">
+            <h3>Master of Software Engineering (In Progress)</h3>
+            <p class="school">Grand Valley State University (GVSU)</p>
+            <p class="grad-date">Winter 2026 Semester &mdash; Currently Accumulating Credits</p>
+            <p>
+                Currently attending GVSU and accumulating credits toward a Master&apos;s degree in
+                Software Engineering. Began Data Engineering coursework in January 2026.
+            </p>
+        </div>
 
         <div class="education-card">
             <h3>Bachelor of Science in Computer Science</h3>
@@ -483,7 +511,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
                     <div class="contact-label">Location</div>
-                    <div class="contact-value">Corpus Christi, TX</div>
+                    <div class="contact-value">Grand Rapids, MI</div>
                 </div>
             </div>
         </div>
@@ -493,7 +521,7 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>&copy; 2026 Aidan Becker. Built with purpose.</p>
+        <p> 2026 Aidan Becker. Built with purpose.</p>
     </div>
 </footer>
 
@@ -521,6 +549,7 @@
         }
     });
 </script>
+<script src="assets/js/space-bg.js"></script>
 
 </body>
 </html>

@@ -13,7 +13,7 @@
 <!-- NAVIGATION -->
 <nav id="topnav">
     <div class="nav-inner">
-        <a href="index.html" class="nav-logo">A<span>.</span>Becker</a>
+        <a href="index.html" class="nav-logo">Aidan Becker</a>
         <div class="nav-links" id="navLinks">
             <a href="index.html#about">About</a>
             <a href="index.html#experience">Experience</a>
@@ -30,6 +30,7 @@
 
 <!-- HERO -->
 <section id="hero" style="min-height:40vh;">
+    <canvas id="spaceCanvas" class="space-canvas"></canvas>
     <div class="container hero-content">
         <p class="hero-greeting">Personal Projects</p>
         <h1 class="hero-name">Selected Work</h1>
@@ -154,6 +155,26 @@
                 </div>
             </div>
 
+            <div class="project-card">
+                <img class="project-thumb" src="images/sorting.png" alt="Sorting algorithm visualization" />
+                <div class="project-info">
+                    <h3>Sorting Visualizations</h3>
+                    <p>
+                        Interactive visualizations of classic sorting algorithms rendered on HTML5 Canvas
+                        with step-by-step animation. Covers Bubble, Insertion, Selection, Shell, Merge, and Quick Sort.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 Canvas</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="sortingvisualizations.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/abecker96/Sorting_visualizations"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -177,6 +198,7 @@
         });
     });
 </script>
+<script src="assets/js/space-bg.js"></script>
 
 </body>
 </html>

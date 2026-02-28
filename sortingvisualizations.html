@@ -1,240 +1,522 @@
-﻿<!DOCTYPE HTML>
-<!--
-	Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aidan Becker</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sorting Visualizations - Aidan Becker</title>
+    <link rel="stylesheet" href="assets/css/professional.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <style>
+        .demo-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(56,189,248,0.12);
+            margin: 2rem 0;
+            background: #0a1628;
+        }
+        .demo-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        #sortCanvas {
+            display: block;
+            width: 100%;
+            height: 420px;
+        }
+        .sort-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: rgba(15, 31, 61, 0.8);
+            border-top: 1px solid rgba(56,189,248,0.08);
+        }
+        .sort-controls label {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--slate-300);
+        }
+        .sort-controls select,
+        .sort-controls input[type="range"] {
+            background: var(--navy-800);
+            color: var(--white);
+            border: 1px solid rgba(56,189,248,0.15);
+            border-radius: 4px;
+            padding: 0.35rem 0.6rem;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+        }
+        .sort-controls select:focus,
+        .sort-controls input[type="range"]:focus {
+            outline: 1px solid var(--accent);
+        }
+        .sort-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            border-radius: 5px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            transition: all 0.2s ease;
+        }
+        .sort-btn:hover {
+            background: var(--accent);
+            color: var(--navy-900);
+        }
+        .sort-btn.active {
+            background: var(--accent);
+            color: var(--navy-900);
+        }
+        .sort-status {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--slate-400);
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
 
-			<!-- Header -->
-				<section id="header" class="wrapper">
+<nav id="topnav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Aidan Becker</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
 
-					<!-- Logo -->
-						<div id="logo">
-							<h1><a href="https://github.com/abecker96/Sorting_visualizations">Sorting Algorithm Visualizations</a></h1>
-							<p>Various sorting algorithms including Bubble Sort, Insertion Sort, and Selection Sort visualized in Processing, a variant of Java.</p>
-						</div>
+<section id="hero" style="min-height:30vh;">
+    <canvas id="spaceCanvas" class="space-canvas"></canvas>
+    <div class="container hero-content">
+        <p class="hero-greeting"><a href="index.html#projects" style="color:var(--accent);">&larr; Back to Projects</a></p>
+        <h1 class="hero-name">Sorting Visualizations</h1>
+        <p class="hero-headline">Interactive visualizations of classic sorting algorithms rendered on HTML5 Canvas.</p>
+        <div class="hero-cta">
+            <a href="https://github.com/abecker96/Sorting_visualizations" class="btn btn-primary" target="_blank">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </div>
+    </div>
+</section>
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<!-- TODO: Links to github, what else?-->
-							<li><a href="index.html#resume">Resume</a></li>
-							<li>
-								<a href="projects.html">Projects on GitHub</a>
-								<ul>
-									<li><a href="ciphercomm.html">DES Encrypted Messaging App</a></li>
-									<li><a href="producerconsumer.html">Producer/Consumer Solution</a></li>
-									<li><a href="sortingvisualizations.html">Sorting Algorithm Visualizations</a></li>
-									<!--
-                            <li><a href="#">Etiam nisl</a></li>
-                            <li>
-                                <a href="#">Sed consequat</a>
-                                <ul>
-                                    <li><a href="#">Lorem dolor</a></li>
-                                    <li><a href="#">Amet consequat</a></li>
-                                    <li><a href="#">Magna phasellus</a></li>
-                                    <li><a href="#">Etiam nisl</a></li>
-                                    <li><a href="#">Sed feugiat</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Nisl tempus</a></li>
-                            -->
-								</ul>
-							</li>
-							<li><a href="#contact">Contact Info</a></li>
-						</ul>
-					</nav>
+<section class="project-detail">
+    <div class="container">
+        <div class="project-detail-body">
+            <p class="demo-label"><i class="fas fa-play-circle"></i> Live Demo</p>
+            <div class="demo-wrapper">
+                <canvas id="sortCanvas"></canvas>
+                <div class="sort-controls">
+                    <label for="algorithmSelect">Algorithm:</label>
+                    <select id="algorithmSelect">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="insertion">Insertion Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="shell">Shell Sort</option>
+                        <option value="merge">Merge Sort</option>
+                        <option value="quick">Quick Sort</option>
+                    </select>
+                    <label for="sizeSlider">Bars:</label>
+                    <input id="sizeSlider" type="range" min="20" max="200" value="80" />
+                    <label for="speedSlider">Speed:</label>
+                    <input id="speedSlider" type="range" min="1" max="100" value="50" />
+                    <button class="sort-btn" id="startBtn"><i class="fas fa-play"></i> Sort</button>
+                    <button class="sort-btn" id="shuffleBtn"><i class="fas fa-random"></i> Shuffle</button>
+                    <span class="sort-status" id="sortStatus">Ready</span>
+                </div>
+            </div>
+            <p style="font-size:0.8rem;color:var(--slate-400);margin-top:-0.5rem;margin-bottom:2rem;">
+                Choose an algorithm, adjust the number of bars and animation speed, then click Sort to watch the algorithm work step-by-step.
+                Click Shuffle to randomize the array at any time.
+            </p>
 
-				</section>
+            <p>One of the first projects built outside of a classroom. The original was written in Processing (a Java variant designed for visual applications), and this web version recreates the same visualizations using HTML5 Canvas and JavaScript.</p>
+            <p>Six comparison-based sorting algorithms are implemented:</p>
+            <ul style="list-style:disc;padding-left:1.5rem;margin-bottom:1.25rem;">
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Bubble Sort</strong> &mdash; O(n&sup2;) &mdash; repeatedly swaps adjacent out-of-order elements</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Insertion Sort</strong> &mdash; O(n&sup2;) &mdash; builds a sorted subarray one element at a time</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Selection Sort</strong> &mdash; O(n&sup2;) &mdash; finds the minimum unsorted element and places it next</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Shell Sort</strong> &mdash; O(n log&sup2; n) &mdash; generalized insertion sort that compares elements separated by a gap</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Merge Sort</strong> &mdash; O(n log n) &mdash; divide-and-conquer algorithm that recursively splits and merges subarrays</li>
+                <li style="color:var(--slate-300);margin-bottom:0.5rem;"><strong style="color:var(--white);">Quick Sort</strong> &mdash; O(n log n) avg &mdash; partitions around a pivot and recursively sorts each side</li>
+            </ul>
+            <p>Each algorithm animates element comparisons and swaps in real-time, making it easy to see how different strategies traverse and reorder the data.</p>
 
-			<!-- Main -->
-				<div id="main" class="wrapper style2">
-					<!--<div class="title">No Sidebar</div>-->
-					<div class="container">
+            <img src="images/sorting.png" alt="Original Processing sorting visualization" style="width:100%;margin:1.5rem 0;" />
+            <p style="font-size:0.85rem;color:var(--slate-400);">Above: the original Processing-based visualization.</p>
 
-						<!-- Content -->
-							<div id="content">
-								<article class="box post">
-									<!-- This all gets hidden on mobile anyways, so nothing important should go here
-									<header class="style1">
-										<h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
-										morbi bibendum sed malesuada</h2>
-										<p>Tempus feugiat veroeros sed nullam dolore</p>
-									</header>
-									-->
-									<a href="https://github.com/abecker96/Sorting_visualizations" class="image featured">
-										<img src="images/sorting2.jpg" alt="" />
-									</a>
-									<p>One of the first projects I ever worked on outside of a classroom. It was fun and challenging at the time to implement bubble sort, insertion sort, and selection sort.</p>
-									<p>The visualizations themselves came out looking half-decent, too!</p>
-									<p>All written in Processing, a Java variant with extra functionality specifically to make creating graphics easier and more accessible to new programmers.</p>
-								</article>
-							</div>
+            <div class="timeline-tags" style="margin-top:2rem;">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML5 Canvas</span>
+                <span class="tag">Sorting Algorithms</span>
+                <span class="tag">Processing (original)</span>
+            </div>
+        </div>
+    </div>
+</section>
 
-					</div>
-				</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Aidan Becker. Built with purpose.</p>
+    </div>
+</footer>
 
-			<!-- Highlights -->
-			<!--
-				<section id="highlights" class="wrapper style3">
-					<div class="title">The Endorsements</div>
-					<div class="container">
-						<div class="row aln-center">
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<h3><a href="#">Aliquam diam consequat</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-									<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-									<h3><a href="#">Mattis tempus lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</div>
-				</section>
-			-->
-			<!-- Footer -->
-			</section>
-			<div id="contact"></div>
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="container">
-					<header class="style1">
-						<h2>Need to get in touch with me?</h2>
-						<p>
-							Here's a list of ways to get in contact with me. <br />
-							You can even send a message right from this page, and I'll
-							get back to you as soon as I can.
-						</p>
-					</header>
-					<div class="row">
-						<div class="col-6 col-12-medium">
+<script>
+    /* ========== Nav Toggle ========== */
+    document.getElementById('navToggle').addEventListener('click', function () {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
 
-							<!-- Contact Form -->
-							<section>
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-small">
-											<input type="text" name="name" id="contact-name" placeholder="Name" />
-										</div>
-										<div class="col-6 col-12-small">
-											<input type="text" name="email" id="contact-email" placeholder="Email" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-										</div>
+    /* ========== Sorting Visualization Engine ========== */
+    (function () {
+        var canvas = document.getElementById('sortCanvas');
+        var ctx = canvas.getContext('2d');
+        var arr = [];
+        var sorting = false;
+        var steps = [];
+        var stepIndex = 0;
+        var animId = null;
+        var comparisons = 0;
+        var swaps = 0;
 
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" class="style1" value="Send" /></li>
-												<li><input type="reset" class="style2" value="Reset" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
+        var algorithmSelect = document.getElementById('algorithmSelect');
+        var sizeSlider = document.getElementById('sizeSlider');
+        var speedSlider = document.getElementById('speedSlider');
+        var startBtn = document.getElementById('startBtn');
+        var shuffleBtn = document.getElementById('shuffleBtn');
+        var statusEl = document.getElementById('sortStatus');
 
-						</div>
-						<div class="col-6 col-12-medium">
+        // Colors
+        var BAR_COLOR = '#38bdf8';
+        var COMPARE_COLOR = '#fbbf24';
+        var SWAP_COLOR = '#f43f5e';
+        var SORTED_COLOR = '#22c55e';
+        var BG_COLOR = '#0a1628';
 
-							<!-- Contact -->
-							<section class="feature-list small">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-home">Location</h3>
-											<p>
-												Corpus Christi<br />
-												Texas, 78412
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<!-- TODO: Make Social Media-->
-											<h3 class="icon solid fa-comment">Social</h3>
-											<p>
-												<a href="https://twitter.com/AidanCSB">Twitter</a><br />
-												<a href="https://www.linkedin.com/in/aidan-becker">LinkedIn</a><br />
-												<a href="https://www.facebook.com/aidan.becker.9">Facebook</a><br />
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-envelope">Email</h3>
-											<p>
-												<a href="BeckerAidan9@gmail.com">BeckerAidan9@gmail.com</a>
-												<a href="https://github.com/abecker96">GitHub</a>
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-phone">Phone</h3>
-											<p>
-												(512) 912-6179
-											</p>
-										</section>
-									</div>
-								</div>
-							</section>
+        function initArray() {
+            var n = parseInt(sizeSlider.value);
+            arr = [];
+            for (var i = 1; i <= n; i++) arr.push(i);
+            shuffle(arr);
+            comparisons = 0;
+            swaps = 0;
+        }
 
-						</div>
-					</div>
-					<div id="copyright">
-						<ul>
-							<!--TODO: copyright lmao-->
-							<!--<li>&copy; Untitled.</li>-->
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
+        function shuffle(a) {
+            for (var i = a.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var t = a[i]; a[i] = a[j]; a[j] = t;
+            }
+        }
 
-		</div>
+        function drawBars(highlights, sortedSet) {
+            ctx.fillStyle = BG_COLOR;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            var n = arr.length;
+            var barW = canvas.width / n;
+            var maxVal = n;
+            for (var i = 0; i < n; i++) {
+                var barH = (arr[i] / maxVal) * (canvas.height - 10);
+                var x = i * barW;
+                var y = canvas.height - barH;
+                if (sortedSet && sortedSet.has(i)) {
+                    ctx.fillStyle = SORTED_COLOR;
+                } else if (highlights && highlights.swap && (highlights.swap[0] === i || highlights.swap[1] === i)) {
+                    ctx.fillStyle = SWAP_COLOR;
+                } else if (highlights && highlights.compare && (highlights.compare[0] === i || highlights.compare[1] === i)) {
+                    ctx.fillStyle = COMPARE_COLOR;
+                } else {
+                    ctx.fillStyle = BAR_COLOR;
+                }
+                ctx.fillRect(x + 0.5, y, Math.max(barW - 1, 1), barH);
+            }
+        }
 
-		</div>
+        // --- Generate steps for each algorithm ---
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        function bubbleSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            var n = arr.length;
+            for (var i = 0; i < n - 1; i++) {
+                for (var j = 0; j < n - i - 1; j++) {
+                    steps.push({ type: 'compare', indices: [j, j + 1], arr: arr.slice() });
+                    if (arr[j] > arr[j + 1]) {
+                        var t = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = t;
+                        steps.push({ type: 'swap', indices: [j, j + 1], arr: arr.slice() });
+                    }
+                }
+                steps.push({ type: 'sorted', index: n - i - 1, arr: arr.slice() });
+            }
+            steps.push({ type: 'sorted', index: 0, arr: arr.slice() });
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
 
-	</body>
+        function insertionSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            var n = arr.length;
+            steps.push({ type: 'sorted', index: 0, arr: arr.slice() });
+            for (var i = 1; i < n; i++) {
+                var j = i;
+                while (j > 0) {
+                    steps.push({ type: 'compare', indices: [j - 1, j], arr: arr.slice() });
+                    if (arr[j - 1] > arr[j]) {
+                        var t = arr[j]; arr[j] = arr[j - 1]; arr[j - 1] = t;
+                        steps.push({ type: 'swap', indices: [j - 1, j], arr: arr.slice() });
+                        j--;
+                    } else {
+                        break;
+                    }
+                }
+                steps.push({ type: 'sorted', index: i, arr: arr.slice() });
+            }
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
+
+        function selectionSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            var n = arr.length;
+            for (var i = 0; i < n - 1; i++) {
+                var minIdx = i;
+                for (var j = i + 1; j < n; j++) {
+                    steps.push({ type: 'compare', indices: [minIdx, j], arr: arr.slice() });
+                    if (arr[j] < arr[minIdx]) {
+                        minIdx = j;
+                    }
+                }
+                if (minIdx !== i) {
+                    var t = arr[i]; arr[i] = arr[minIdx]; arr[minIdx] = t;
+                    steps.push({ type: 'swap', indices: [i, minIdx], arr: arr.slice() });
+                }
+                steps.push({ type: 'sorted', index: i, arr: arr.slice() });
+            }
+            steps.push({ type: 'sorted', index: n - 1, arr: arr.slice() });
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
+
+        function shellSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            var n = arr.length;
+            var gap = Math.floor(n / 2);
+            while (gap > 0) {
+                for (var i = gap; i < n; i++) {
+                    var j = i;
+                    while (j >= gap) {
+                        steps.push({ type: 'compare', indices: [j - gap, j], arr: arr.slice() });
+                        if (arr[j - gap] > arr[j]) {
+                            var t = arr[j]; arr[j] = arr[j - gap]; arr[j - gap] = t;
+                            steps.push({ type: 'swap', indices: [j - gap, j], arr: arr.slice() });
+                            j -= gap;
+                        } else {
+                            break;
+                        }
+                    }
+                }
+                gap = Math.floor(gap / 2);
+            }
+            for (var i = 0; i < n; i++) steps.push({ type: 'sorted', index: i, arr: arr.slice() });
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
+
+        function mergeSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            function mergeSort(lo, hi) {
+                if (hi - lo <= 1) return;
+                var mid = Math.floor((lo + hi) / 2);
+                mergeSort(lo, mid);
+                mergeSort(mid, hi);
+                merge(lo, mid, hi);
+            }
+            function merge(lo, mid, hi) {
+                var temp = [];
+                var i = lo, j = mid;
+                while (i < mid && j < hi) {
+                    steps.push({ type: 'compare', indices: [i, j], arr: arr.slice() });
+                    if (arr[i] <= arr[j]) {
+                        temp.push(arr[i++]);
+                    } else {
+                        temp.push(arr[j++]);
+                    }
+                }
+                while (i < mid) temp.push(arr[i++]);
+                while (j < hi) temp.push(arr[j++]);
+                for (var k = 0; k < temp.length; k++) {
+                    arr[lo + k] = temp[k];
+                    steps.push({ type: 'swap', indices: [lo + k, lo + k], arr: arr.slice() });
+                }
+            }
+            mergeSort(0, arr.length);
+            for (var i = 0; i < arr.length; i++) steps.push({ type: 'sorted', index: i, arr: arr.slice() });
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
+
+        function quickSortSteps(a) {
+            var steps = [];
+            var arr = a.slice();
+            function qs(lo, hi) {
+                if (lo >= hi) {
+                    if (lo === hi) steps.push({ type: 'sorted', index: lo, arr: arr.slice() });
+                    return;
+                }
+                var pivot = arr[hi];
+                var i = lo;
+                for (var j = lo; j < hi; j++) {
+                    steps.push({ type: 'compare', indices: [j, hi], arr: arr.slice() });
+                    if (arr[j] < pivot) {
+                        if (i !== j) {
+                            var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+                            steps.push({ type: 'swap', indices: [i, j], arr: arr.slice() });
+                        }
+                        i++;
+                    }
+                }
+                if (i !== hi) {
+                    var t = arr[i]; arr[i] = arr[hi]; arr[hi] = t;
+                    steps.push({ type: 'swap', indices: [i, hi], arr: arr.slice() });
+                }
+                steps.push({ type: 'sorted', index: i, arr: arr.slice() });
+                qs(lo, i - 1);
+                qs(i + 1, hi);
+            }
+            qs(0, arr.length - 1);
+            steps.push({ type: 'done', arr: arr.slice() });
+            return steps;
+        }
+
+        // --- Animation ---
+        var sortedIndices = new Set();
+
+        function getDelay() {
+            var speed = parseInt(speedSlider.value);
+            // Map 1-100 to ~200ms down to ~1ms
+            return Math.max(1, Math.round(200 / speed));
+        }
+
+        function animate() {
+            if (stepIndex >= steps.length) {
+                sorting = false;
+                startBtn.classList.remove('active');
+                startBtn.innerHTML = '<i class="fas fa-play"></i> Sort';
+                statusEl.textContent = 'Done � ' + comparisons + ' comparisons, ' + swaps + ' swaps';
+                // Final green sweep
+                arr = steps[steps.length - 1].arr.slice();
+                var allSorted = new Set();
+                for (var i = 0; i < arr.length; i++) allSorted.add(i);
+                drawBars(null, allSorted);
+                return;
+            }
+            var step = steps[stepIndex];
+            arr = step.arr.slice();
+            var highlights = {};
+            if (step.type === 'compare') {
+                highlights.compare = step.indices;
+                comparisons++;
+            } else if (step.type === 'swap') {
+                highlights.swap = step.indices;
+                swaps++;
+            } else if (step.type === 'sorted') {
+                sortedIndices.add(step.index);
+            }
+            drawBars(highlights, sortedIndices);
+            statusEl.textContent = algorithmSelect.options[algorithmSelect.selectedIndex].text + ' � ' + comparisons + ' cmp, ' + swaps + ' swaps';
+            stepIndex++;
+            animId = setTimeout(animate, getDelay());
+        }
+
+        function startSort() {
+            if (sorting) {
+                // Stop
+                sorting = false;
+                clearTimeout(animId);
+                startBtn.classList.remove('active');
+                startBtn.innerHTML = '<i class="fas fa-play"></i> Sort';
+                statusEl.textContent = 'Paused';
+                return;
+            }
+            sorting = true;
+            startBtn.classList.add('active');
+            startBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            comparisons = 0;
+            swaps = 0;
+            sortedIndices = new Set();
+            stepIndex = 0;
+            var algo = algorithmSelect.value;
+            if (algo === 'bubble') steps = bubbleSortSteps(arr);
+            else if (algo === 'insertion') steps = insertionSortSteps(arr);
+            else if (algo === 'selection') steps = selectionSortSteps(arr);
+            else if (algo === 'shell') steps = shellSortSteps(arr);
+            else if (algo === 'merge') steps = mergeSortSteps(arr);
+            else if (algo === 'quick') steps = quickSortSteps(arr);
+            animate();
+        }
+
+        function doShuffle() {
+            if (sorting) {
+                sorting = false;
+                clearTimeout(animId);
+                startBtn.classList.remove('active');
+                startBtn.innerHTML = '<i class="fas fa-play"></i> Sort';
+            }
+            initArray();
+            sortedIndices = new Set();
+            drawBars(null, null);
+            statusEl.textContent = 'Shuffled � ' + arr.length + ' elements';
+        }
+
+        startBtn.addEventListener('click', startSort);
+        shuffleBtn.addEventListener('click', doShuffle);
+        sizeSlider.addEventListener('input', function () {
+            doShuffle();
+        });
+
+        // Init
+        initArray();
+        drawBars(null, null);
+        statusEl.textContent = 'Ready � ' + arr.length + ' elements';
+    })();
+</script>
+<script src="assets/js/space-bg.js"></script>
+</body>
 </html>
