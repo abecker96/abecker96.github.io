@@ -1,312 +1,182 @@
-﻿<!DOCTYPE HTML>
-<!--
-	Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aidan Becker</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects - Aidan Becker</title>
+    <meta name="description" content="Personal projects by Aidan Becker - graphics, simulation, and systems programming." />
+    <link rel="stylesheet" href="assets/css/professional.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+</head>
+<body>
 
-			<!-- Header -->
-				<section id="header" class="wrapper">
+<!-- NAVIGATION -->
+<nav id="topnav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">A<span>.</span>Becker</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
 
-					<!-- Logo -->
-						<div id="logo">
-							<h1>Projects<br></h1>
+<!-- HERO -->
+<section id="hero" style="min-height:40vh;">
+    <div class="container hero-content">
+        <p class="hero-greeting">Personal Projects</p>
+        <h1 class="hero-name">Selected Work</h1>
+        <p class="hero-headline">
+            Graphics, simulation, and systems-level projects built outside of work.
+        </p>
+        <div class="hero-cta">
+            <a href="index.html" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </div>
+</section>
 
-							<h1><br><a href="https://github.com/abecker96/ProducerConsumerSolution">Multithreaded Producer-Consumer Solution</a></h1>
-							<p> A C++ project written for my Operating Systems class.</p>
-						</div>
+<!-- PROJECTS DETAIL -->
+<section id="projects" style="padding-top:4rem;">
+    <div class="container">
 
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Home</a></li>
-							<!-- TODO: Links to github, what else?-->
-							<li><a href="#resume">Resume</a></li>
-							<li>
-								<a href="projects.html">Projects on GitHub</a>
-								<ul>
-									<li><a href="ciphercomm.html">DES Encrypted Messaging App</a></li>
-									<li><a href="producerconsumer.html">Producer/Consumer Solution</a></li>
-									<li><a href="sortingvisualizations.html">Sorting Algorithm Visualizations</a></li>
-									<!--
-                            <li><a href="#">Etiam nisl</a></li>
-                            <li>
-                                <a href="#">Sed consequat</a>
-                                <ul>
-                                    <li><a href="#">Lorem dolor</a></li>
-                                    <li><a href="#">Amet consequat</a></li>
-                                    <li><a href="#">Magna phasellus</a></li>
-                                    <li><a href="#">Etiam nisl</a></li>
-                                    <li><a href="#">Sed feugiat</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Nisl tempus</a></li>
-                            -->
-								</ul>
-							</li>
-							<li><a href="#contact">Contact Info</a></li>
-						</ul>
-					</nav>
+        <div class="projects-grid">
 
-				</section>
+            <div class="project-card">
+                <img class="project-thumb" src="images/sphereflake3.jpg" alt="Recursive ray tracer render" />
+                <div class="project-info">
+                    <h3>Recursive Ray Tracer</h3>
+                    <p>
+                        Multithreaded recursive ray tracer with super-sampling, supporting sphere-flake scenes
+                        and Phong shading. Utilizes multithreading for significant performance gains on complex scenes.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++</span>
+                        <span class="tag">Multithreading</span>
+                        <span class="tag">Ray Tracing</span>
+                        <span class="tag">Phong Shading</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="raytracer.html"><i class="fas fa-external-link-alt"></i> Interactive Demo</a>
+                        <a href="https://github.com/abecker96/RayTracer"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
 
-			<!-- Main -->
-				<div id="main" class="wrapper style2">
-					<!--<div class="title">No Sidebar</div>-->
-					<div class="container">
+            <div class="project-card">
+                <img class="project-thumb" src="images/ParticleSim1.jpg" alt="Compute shader particle simulation" />
+                <div class="project-info">
+                    <h3>Compute Shader Particle Sim</h3>
+                    <p>
+                        OpenGL compute-shader pipeline simulating millions of particles in real-time on the GPU.
+                        Demonstrates GPU-driven computation for massively parallel workloads.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">GLSL</span>
+                        <span class="tag">Compute Shaders</span>
+                        <span class="tag">C++</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="computeparticles.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/ComputeParticles"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
 
-						<!-- Content -->
-							<div id="content">
-								<article class="box post">
-									<!-- This all gets hidden on mobile anyways, so nothing important should go here
-									<header class="style1">
-										<h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
-										morbi bibendum sed malesuada</h2>
-										<p>Tempus feugiat veroeros sed nullam dolore</p>
-									</header>
-									-->
-									<a href="https://github.com/abecker96/ProducerConsumerSolution" class="image featured">
-										<img src="images/producer_consumer_supercut.png" alt="" />
-									</a>
-									<p>An arbitrary number of producer threads place random number in a bounded buffer, and an arbitrary number of consumer threads remove items from the buffer, determining if the numbers are prime.</p>
-									<p>Initially intended to be a simple example of the difficulties involved with a producer/consumer problem, and the care that should be taken
-										when initializing producer/consumer threads, this quickly became a pet project to come up with a solution that will run successfully, even with an infinitely unbalanced number of
-										with an infinitely unbalanced number of producers and consumers.</p>
-									<p>Written in C++ 11 for Unix systems.</p>
-								</article>
-							</div>
+            <div class="project-card">
+                <img class="project-thumb" src="images/cloth.gif" alt="3D cloth simulation" />
+                <div class="project-info">
+                    <h3>3D Cloth Simulation</h3>
+                    <p>
+                        Randomly generated cloth-like geometry with spring-mass physics, rendered with OpenGL.
+                        Explores real-time physics simulation with dynamic mesh deformation.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">Physics Sim</span>
+                        <span class="tag">Spring-Mass</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="3dcloth.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/3DCloth"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
 
-					</div>
-				</div>
+            <div class="project-card">
+                <img class="project-thumb" src="images/flocking.png" alt="Flocking simulation" />
+                <div class="project-info">
+                    <h3>Browser Flocking Simulator</h3>
+                    <p>
+                        HTML5 Canvas and JavaScript implementation of Craig Reynolds' boids algorithm.
+                        Simulates emergent flocking behavior in real-time in the browser.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 Canvas</span>
+                        <span class="tag">Boids</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="flockingsim.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/abecker96/FlockingSim"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
 
-			<section id="header" class="wrapper">
-			<div id="logo">
-				<h1><a href="https://github.com/abecker96/MessagingApp">Secure SMS</a></h1>
-				<p> An Android app supporting end-to-end encrypted messaging utilizing DES and RSA encryption.</p>
-				<p> Written in Java and Kotlin using Android Studio and IntelliJ IDEA </p>
-			</div>
-			</section>
-			<!-- Main -->
-			<div id="" class="wrapper style2">
-				<!--<div class="title">No Sidebar</div>-->
-				<div class="container">
+            <div class="project-card">
+                <img class="project-thumb" src="images/producer-consumer.JPG" alt="Producer-consumer threading" />
+                <div class="project-info">
+                    <h3>Producer-Consumer Solution</h3>
+                    <p>
+                        Multithreaded producer-consumer solution in C++11, designed to run correctly even with
+                        infinitely unbalanced numbers of producers and consumers. Written for Unix systems.
+                    </p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++11</span>
+                        <span class="tag">Multithreading</span>
+                        <span class="tag">Concurrency</span>
+                        <span class="tag">Unix</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="producerconsumer.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/ProducerConsumerSolution"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
 
-					<!-- Content -->
-					<div id="ciphercommcontent">
-						<article class="box post">
-							<!-- This all gets hidden on mobile anyways, so nothing important should go here
-                            <header class="style1">
-                                <h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
-                                morbi bibendum sed malesuada</h2>
-                                <p>Tempus feugiat veroeros sed nullam dolore</p>
-                            </header>
-                            -->
-							<a href="https://github.com/abecker96/MessagingApp" class="image featured">
-								<img src="images/cipherCommSuperCut.png" alt="" />
-							</a>
-							<p>An app developed for Software Engineering as a group project alongside Prem Panchal, Christofer Henry, and Robert Sosa.</p>
-							<p>Utilizing the Agile development process and working together through GitHub, the four of us created an application
-								with our own implementations of the DES and RSA encryption standards that works together with a server application
-								to allow secure, end-to-end encrypted messaging between two people.</p>
-							<p>Tools utilized: Agile, GitHub, Android Studio (Java and Kotlin), and IntelliJ IDEA (Java)</p>
-						</article>
-					</div>
+        </div>
 
-				</div>
-			</div>
+    </div>
+</section>
 
-			<section id="header" class="wrapper">
-				<div id="logo">
-					<h1><a href="https://github.com/abecker96/Sorting_visualizations">Sorting Visualizations</a></h1>
-					<p> Various sorting algorithms including Bubble Sort, Insertion Sort, and Selection Sort visualized in Processing, a variant of Java.</p>
-				</div>
-			</section>
-			<!-- Main -->
-			<div id="" class="wrapper style2">
-				<!--<div class="title">No Sidebar</div>-->
-				<div class="container">
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Aidan Becker. Built with purpose.</p>
+    </div>
+</footer>
 
-					<!-- Content -->
-					<div id="sortingVisualiations">
-						<article class="box post">
-							<!-- This all gets hidden on mobile anyways, so nothing important should go here
-                            <header class="style1">
-                                <h2>Lorem ipsum dolor sit amet magna egestas<br class="mobile-hide" />
-                                morbi bibendum sed malesuada</h2>
-                                <p>Tempus feugiat veroeros sed nullam dolore</p>
-                            </header>
-                            -->
-							<a href="https://github.com/abecker96/Sorting_visualizations" class="image featured">
-								<img src="images/sorting.png" alt="" />
-							</a>
-							<p>One of the first projects I ever worked on outside of a classroom. It was fun and challenging at the time to implement bubble sort, insertion sort, and selection sort.
-								The visualizations themselves came out looking half-decent, too!</p>
-							<p>All written in Processing, a Java variant with extra functionality specifically to make creating graphics easier and more accessible to new programmers.</p>
-						</article>
-					</div>
+<!-- SCRIPTS -->
+<script>
+    document.getElementById('navToggle').addEventListener('click', function () {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+</script>
 
-				</div>
-			</div>
-			<!-- Highlights -->
-			<!--
-				<section id="highlights" class="wrapper style3">
-					<div class="title">The Endorsements</div>
-					<div class="container">
-						<div class="row aln-center">
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-									<h3><a href="#">Aliquam diam consequat</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-									<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-									<h3><a href="#">Mattis tempus lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</div>
-				</section>
-			-->
-			<!-- Footer -->
-			</section>
-			<div id="contact"></div>
-			<!-- Footer -->
-			<section id="footer" class="wrapper">
-				<div class="container">
-					<header class="style1">
-						<h2>Need to get in touch with me?</h2>
-						<p>
-							Here's a list of ways to get in contact with me. <br />
-							You can even send a message right from this page, and I'll
-							get back to you as soon as I can.
-						</p>
-					</header>
-					<div class="row">
-						<div class="col-6 col-12-medium">
-
-							<!-- Contact Form -->
-							<section>
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-small">
-											<input type="text" name="name" id="contact-name" placeholder="Name" />
-										</div>
-										<div class="col-6 col-12-small">
-											<input type="text" name="email" id="contact-email" placeholder="Email" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-										</div>
-
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" class="style1" value="Send" /></li>
-												<li><input type="reset" class="style2" value="Reset" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-
-						</div>
-						<div class="col-6 col-12-medium">
-
-							<!-- Contact -->
-							<section class="feature-list small">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-home">Location</h3>
-											<p>
-												Corpus Christi<br />
-												Texas, 78412
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<!-- TODO: Make Social Media-->
-											<h3 class="icon solid fa-comment">Social</h3>
-											<p>
-												<a href="https://twitter.com/AidanCSB">Twitter</a><br />
-												<a href="https://www.linkedin.com/in/aidan-becker">LinkedIn</a><br />
-												<a href="https://www.facebook.com/aidan.becker.9">Facebook</a><br />
-
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-envelope">Email</h3>
-											<p>
-												<a href="BeckerAidan9@gmail.com">BeckerAidan9@gmail.com</a>
-												<a href="https://github.com/abecker96">GitHub</a>
-											</p>
-										</section>
-									</div>
-									<div class="col-6 col-12-small">
-										<section>
-											<h3 class="icon solid fa-phone">Phone</h3>
-											<p>
-												(512) 912-6179
-											</p>
-										</section>
-									</div>
-								</div>
-							</section>
-
-						</div>
-					</div>
-					<div id="copyright">
-						<ul>
-							<!--TODO: copyright lmao-->
-							<!--<li>&copy; Untitled.</li>-->
-							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-
-		</div>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

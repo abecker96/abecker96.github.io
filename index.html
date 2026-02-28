@@ -1,369 +1,526 @@
-﻿<!DOCTYPE HTML>
-<!--
-	Escape Velocity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Aidan Becker's Personal Showcase</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aidan Becker - Aerospace Software Engineer</title>
+    <meta name="description" content="Aerospace software engineer specializing in DO-178C embedded systems, CI/CD pipelines, and safety-critical software development." />
+    <link rel="stylesheet" href="assets/css/professional.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 </head>
+<body>
 
-<body class="homepage is-preload">
-    <div id="page-wrapper">
-
-        <!-- Header -->
-        <section id="header" class="wrapper">
-
-            <!-- Logo -->
-            <div id="logo">
-                <h1><a href="index.html">Aidan Becker</a></h1>
-                <p>B.S. in Computer Science, emphasis on Systems Programming</p>
-            </div>
-
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li class="current"><a href="index.html">Home</a></li>
-                    <!-- TODO: Links to github, what else?-->
-                    <li><a href="#resume">Resume</a></li>
-                    <li>
-                        <a href="#projects">Projects on GitHub</a>
-                        <ul>
-                            <li><a href="3dcloth.html">3D 'Cloth'</a></li>
-                            <li><a href="raytracer.html">Recursive Ray Tracer</a></li>
-                            <li><a href="computeparticles.html">Compute Shader Particle Sim</a></li>
-                            <li><a href="producerconsumer.html">Producer/Consumer Solution</a></li>
-                            <li><a href="calculatorapp.html">Android Calculator App</a></li>
-                            <li><a href="flockingsim.html">Browser Flocking Sim</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact Info</a></li>
-                </ul>
-            </nav>
-
-        </section>
-
-        <!-- Intro -->
-        <section id="intro" class="wrapper style1">
-            <!--<div class="title">TODO: I still don't know what to put here "The Introduction"</div>
-				<div class="container">
-					<p class="style1">TODO:Or what to put here</p>
-					-->
-            <p class="style2">
-                Recent Graduate from Texas A&M University at Corpus Christi with a B.S. in Computer Science, emphasis in Systems Programming
-            </p>
-            <!--
-			<p class="style3">It's <strong>responsive</strong>, built on <strong>HTML5</strong> and <strong>CSS3</strong>, and released for
-			free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>, so use it for any of
-			your personal or commercial projects &ndash; just be sure to credit us!</p>
-			<ul class="actions">
-				<li><a href="#" class="button style3 large">Proceed</a></li>
-			</ul>
-			-->
+<!-- NAVIGATION -->
+<nav id="topnav">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">A<span>.</span>Becker</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
-    <div id="resume"></div>
-    </section>
+</nav>
 
-    <!-- Main -->
-
-    <section id="main" class="wrapper style2">
-        <div class="title">
-            <h2>Resume:</h2>
+<!-- HERO -->
+<section id="hero">
+    <div class="container hero-content">
+        <p class="hero-greeting">Aerospace Software Engineer</p>
+        <h1 class="hero-name">Aidan Becker</h1>
+        <p class="hero-headline">
+            Building safety-critical embedded systems &amp; tooling for the aerospace industry.
+        </p>
+        <p class="hero-summary">
+            Software engineer with hands-on experience in DO-178C qualification, embedded C/C++ development,
+            Python tooling, and CI/CD pipeline design for regulated aerospace environments.
+        </p>
+        <div class="hero-cta">
+            <a href="#experience" class="btn btn-primary">
+                <i class="fas fa-briefcase"></i> View Experience
+            </a>
+            <a href="#contact" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Get in Touch
+            </a>
         </div>
-        <div class="container">
-
-            <!-- Image
-			<a href="#" class="image featured">
-				<img src="images/pic01.jpg" alt="" />
-			</a>
-			-->
-            <!-- Features -->
-            <section id="features">
-                <div class="feature-list">
-                    <div class="row">
-                        <div class="col-6 col-12-medium">
-                            <section>
-                                <h3 class="icon fa-image">Education:</h3>
-                                <p>
-                                    Bachelor of Science (B.S.) in Computer Science<br /> Emphasis on Systems Programming<br /> Graduated December 2021<br /> Texas A&M University at Corpus Christi<br /> Corpus Christi, TX<br />
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <section>
-                                <h3 class="icon fa-comment">Relevant Coursework:</h3>
-                                <p>
-                                    Data Structures<br /> Software Engineering<br /> Computer Networking<br /> Computer Architecture<br /> Intro to Database Systems<br /> Computer Graphics<br />
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <section>
-                                <h3 class="icon solid fa-sync">Skills:</h3>
-                                <p>
-                                    • Strong object-oriented programming experience in Java, C++, C#, and JavaScript<br />
-									• Embedded software development in C/C++ with CAN, RS-485, Ethernet communication protocols<br />
-									• Version control workflows with GitHub, GitLab, and Bitbucket<br />
-									• CI/CD pipeline development in GitLab using Docker and YAML-based automation<br />
-									• Data analysis and scripting in Python and R<br />
-									• Extensive use of JIRA, Rational DOORS, and Confluence in regulated environments<br />
-									• System-level debugging, code reviews, and requirements gathering across complex projects<br />
-									• System maintenance and project leadership<br />
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <section>
-                                <h3 class="icon fa-image">Experience:</h3>
-                                <p>
-                                    <b>Intern at the TAMUCC Genomics Core Lab</b><br />
-									Aug 2019 – Sep 2019<br />
-									• Built an API and control application for an automated pipetting system<br />
-									• Collected, recorded, and analyzed pipetting efficiency data<br />
-									• Developed data analysis tools in Python and R<br />
-                                </p><br />
-                                <p>
-                                    <b>Software Engineer I at Belcan, LLC</b><br />
-									Aug 2019 - Sep 2019<br />
-									• Developed embedded C applications within DO-178 quality constraints and MISRA C standards, with intent of delivering flight-ready, perfected products<br /> 
-									• Developed C++ desktop tools to assist with system debugging, log generation and analysis, and testing/quality assurance.<br />
-									• Coordinated with other engineers to evaluate and improve software and hardware interfaces.<br />
-									• Tested methodology with writing and execution of test plans, debugging and testing scripts and tools.<br />
-									• Conducted data modeling, performance and integration testing.<br />
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-                <!--
-				<ul class="actions special">
-					<li><a href="#" class="button style1 large">Get Started</a></li>
-					<li><a href="#" class="button style2 large">More Info</a></li>
-				</ul>
-				-->
-            </section>
-
-        </div>
-        <div id="projects"></div>
-    </section>
-
-    <!-- Highlights -->
     </div>
-    <section id="highlights" class="wrapper style3">
-        <div class="title">Projects on GitHub</div>
-        <div class="container">
-            <div class="row aln-center">
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="3dcloth.html" class="button style1">3D 'Cloth'</a></li>
-                        </ul><br />
-                        <a href="3dcloth.html" class="image featured"><img src="images/cloth.gif" alt="A screenshot of a randomly generated 'cloth'" /></a>
-                        <p>
-                            A C++ and OpenGL project that randomly generates cloth-like geometry.
-                        </p>
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="raytracer.html" class="button style1">Ray Tracer</a></li>
-                        </ul><br />
-                        <a href="raytracer.html" class="image featured"><img src="images/sphereflake3.jpg" alt="" /></a>
-                        <!-- <h3><a href="https://github.com/abecker96/RayTracer">Ray Tracer</a></h3> -->
-                        <p>A recursive ray tracer, utilizing multithreading and super-sampling.</p>
-                        <!--
-						<ul class="actions">
-							<li><a href="#" class="button style1">Learn More</a></li>
-						</ul>
-						-->
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="computeparticles.html" class="button style1">Particle Sim</a></li>
-                        </ul><br />
-                        <a href="computeparticles.html" class="image featured"><img src="images/ParticleSim1.jpg" alt="" /></a>
-                        <!-- <h3><a href="https://github.com/abecker96/ComputeParticles">Compute Shader Particle Sim</a></h3> -->
-                        <p>An OpenGL project utilizing compute shaders to simulate millions of particles in real-time.
-                        </p>
-                        <!--
-						<ul class="actions">
-							<li><a href="#" class="button style1">Learn More</a></li>
-						</ul>
-						-->
-                    </section>
-                </div>
-            </div>
-            </br>
-            <div class="row aln-center">
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="producerconsumer.html" class="button style1">Producer-Consumer</a></li>
-                        </ul><br />
-                        <a href="producerconsumer.html" class="image featured"><img src="images/producer-consumer.JPG" alt="" /></a>
-                        <!-- <h3><a href="https://github.com/abecker96/ProducerConsumerSolution">Multithreaded Producer-Consumer Solution</a></h3> -->
-                        <p>
-                            A C++ project written for my Operating Systems class. An arbitrary number of producer threads place random number in a bounded buffer, and an arbitrary number of consumer threads remove items from the buffer, determining if the numbers are prime. Written
-                            in C++ for unix systems.
-                        </p>
-                        <!--
-						<ul class="actions">
-							<li><a href="#" class="button style1">Learn More</a></li>
-						</ul>
-						-->
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="calculatorapp.html" class="button style1">Android Calculator App</a></li>
-                        </ul><br />
-                        <a href="calculatorapp.html" class="image featured"><img src="images/Calculator.JPG" alt="" /></a>
-                        <!-- <h3><a href="https://github.com/abecker96/ABecker2_MP_Homework_2">Android Calculator App</a></h3> -->
-                        <p>
-                            A basic calculator created for android phones.
-                        </p>
-                        <!--
-						<ul class="actions">
-							<li><a href="#" class="button style1">Learn More</a></li>
-						</ul>
-						-->
-                    </section>
-                </div>
-                <div class="col-4 col-12-medium">
-                    <section class="highlight">
-                        <ul class="actions">
-                            <li><a href="flockingsim.html" class="button style1">Flocking Simulator</a></li>
-                        </ul><br />
-                        <a href="flockingsim.html" class="image featured"><img src="images/flocking.png" alt="" /></a>
-                        <!-- <h3><a href="https://github.com/abecker96/FlockingSim">Browser Flocking Simulator</a></h3> -->
-                        <p>
-                            An HMTL5 Canvas and JavaScript based flocking simulator.
-                        </p>
-                        <!--
-						<ul class="actions">
-							<li><a href="#" class="button style1">Learn More</a></li>
-						</ul>
-						-->
-                    </section>
-                </div>
-            </div>
-        </div>
+</section>
 
-    </section>
-
-    <!-- Footer -->
-    <!-- Footer -->
-    <section id="footer" class="wrapper">
-        <div class="container">
-            <div id="contact"></div>
-            <header class="style1">
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Who I Am</h2>
+        <div class="about-grid">
+            <div class="about-text">
                 <p>
-                    Here's a list of ways to get in contact with me. <br />
-                    <!-- You can even send a message right from this page, and I'll
-							get back to you as soon as I can. -->
+                    I am a software engineer focused on the aerospace industry, where precision and reliability
+                    are not optional - they are the standard. My work spans embedded firmware for flight-critical
+                    avionics, desktop debugging tools, and developer-facing Python tooling that accelerates
+                    qualification and compliance workflows.
                 </p>
-            </header>
-            <!-- <div class="row"> -->
-            <!-- <div class="col-6 col-12-medium"> -->
-
-            <!-- Contact Form -->
-            <!-- <section>
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-small">
-											<input type="text" name="name" id="contact-name" placeholder="Name" />
-										</div>
-										<div class="col-6 col-12-small">
-											<input type="text" name="email" id="contact-email" placeholder="Email" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="contact-message" placeholder="Message" rows="4"></textarea>
-										</div>
-
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" class="style1" value="Send" /></li>
-												<li><input type="reset" class="style2" value="Reset" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section> -->
-
-            <!-- </div> -->
-            <div class="col-6 col-12-medium">
-                <!-- Contact -->
-                <section class="feature-list small">
-                    <div class="row">
-                        <div class="col-6 col-12-small">
-                            <section>
-                                <h3 class="icon solid fa-home">Location</h3>
-                                <p>
-                                    Corpus Christi<br /> Texas, 78412
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-small">
-                            <section>
-                                <!-- TODO: Make Social Media-->
-                                <h3 class="icon solid fa-comment">Social</h3>
-                                <p>
-                                    <a href="https://twitter.com/AidanCSB">Twitter</a><br />
-                                    <a href="https://www.linkedin.com/in/AidanBecker">LinkedIn</a><br />
-                                    <a href="https://www.facebook.com/aidan.becker.9">Facebook</a><br />
-
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-small">
-                            <section>
-                                <h3 class="icon solid fa-envelope">Email</h3>
-                                <p>
-                                    <a href="BeckerAidan9@gmail.com">BeckerAidan9@gmail.com</a>
-                                    <a href="https://github.com/abecker96">GitHub</a>
-                                </p>
-                            </section>
-                        </div>
-                        <div class="col-6 col-12-small">
-                            <section>
-                                <h3 class="icon solid fa-phone">Phone</h3>
-                                <p>
-                                    (512) 912-6179
-                                </p>
-                            </section>
-                        </div>
-                    </div>
-                </section>
+                <p>
+                    I bring a strong interest in building robust CI/CD pipelines that catch defects early and
+                    enforce code quality standards before a single line ships. I believe that modern
+                    software practices - static analysis, automated testing, continuous integration - are
+                    force multipliers in regulated environments like DO-178C.
+                </p>
+                <p>
+                    Outside of work, I enjoy graphics programming, systems-level projects, and exploring
+                    the intersection of high-performance computing and real-time simulation.
+                </p>
             </div>
-            <!-- </div> -->
-            <div id="copyright">
-                <ul>
-                    <!-- <li>&copy; Untitled.</li> -->
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                </ul>
+            <div class="about-details">
+                <div class="detail-card">
+                    <div class="label">Specialty</div>
+                    <div class="value">DO-178C Software</div>
+                </div>
+                <div class="detail-card">
+                    <div class="label">Industry</div>
+                    <div class="value">Aerospace &amp; Defense</div>
+                </div>
+                <div class="detail-card">
+                    <div class="label">Focus</div>
+                    <div class="value">Embedded &amp; Tooling</div>
+                </div>
+                <div class="detail-card">
+                    <div class="label">Location</div>
+                    <div class="value">Corpus Christi, TX</div>
+                </div>
             </div>
         </div>
-    </section>
-
     </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Professional Background</h2>
+        <p class="section-subtitle">
+            Focused on safety-critical software development for aerospace platforms,
+            from embedded firmware to developer tooling and CI/CD automation.
+        </p>
+
+        <div class="timeline">
+
+            <!-- Current Role -->
+            <div class="timeline-item current">
+                <div class="timeline-date">2022 &mdash; Present</div>
+                <h3 class="timeline-role">Software Engineer I</h3>
+                <p class="timeline-company">L3Harris Technologies &bull; Corpus Christi, TX</p>
+                <div class="timeline-body">
+                    <ul>
+                        <li>
+                            Developed and maintained embedded C applications under DO-178C DAL&nbsp;A constraints and
+                            MISRA&nbsp;C standards, targeting flight-critical avionics platforms.
+                        </li>
+                        <li>
+                            Built C++ desktop utilities for system debugging, structured log generation and analysis,
+                            and automated regression testing.
+                        </li>
+                        <li>
+                            Designed and implemented a Python-based qualification tool to streamline
+                            DO-178C verification activities - including requirements traceability,
+                            test-result aggregation, and audit-ready report generation.
+                        </li>
+                        <li>
+                            Architected the CI/CD pipeline for the Python qualification tool using GitLab CI,
+                            enforcing <strong>Ruff</strong> linting, <strong>mypy</strong> strict type checking,
+                            and <strong>pytest</strong> unit testing with coverage tracking on every merge request.
+                        </li>
+                        <li>
+                            Containerized pipeline stages with Docker to guarantee reproducible builds and
+                            consistent static-analysis results across developer machines and CI runners.
+                        </li>
+                        <li>
+                            Coordinated across hardware, systems, and certification teams to refine
+                            software/hardware interface requirements and resolve integration defects.
+                        </li>
+                        <li>
+                            Authored and executed formal test procedures; performed code reviews,
+                            peer inspections, and requirements-based testing per DO-178C objectives.
+                        </li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">DO-178C</span>
+                        <span class="tag">MISRA C</span>
+                        <span class="tag">GitLab CI</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Ruff</span>
+                        <span class="tag">mypy</span>
+                        <span class="tag">pytest</span>
+                        <span class="tag">JIRA</span>
+                        <span class="tag">DOORS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Role -->
+            <div class="timeline-item">
+                <div class="timeline-date">Jan 2022 &mdash; Aug 2022</div>
+                <h3 class="timeline-role">Software Engineer I</h3>
+                <p class="timeline-company">Belcan, LLC (contracted to L3Harris) &bull; Corpus Christi, TX</p>
+                <div class="timeline-body">
+                    <ul>
+                        <li>
+                            Developed embedded C applications within DO-178 quality constraints and MISRA&nbsp;C standards,
+                            delivering flight-ready, verified software artifacts.
+                        </li>
+                        <li>
+                            Built C++ desktop tools for system debugging, log generation &amp; analysis,
+                            and testing/quality assurance workflows.
+                        </li>
+                        <li>
+                            Coordinated with cross-functional engineering teams to evaluate and improve
+                            software and hardware interfaces.
+                        </li>
+                        <li>
+                            Conducted data modeling, performance testing, and integration testing;
+                            authored and executed formal test procedures and debugging scripts.
+                        </li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">DO-178</span>
+                        <span class="tag">MISRA C</span>
+                        <span class="tag">CAN</span>
+                        <span class="tag">RS-485</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Intern -->
+            <div class="timeline-item">
+                <div class="timeline-date">Aug 2019 &mdash; Sep 2019</div>
+                <h3 class="timeline-role">Intern - Genomics Core Lab</h3>
+                <p class="timeline-company">Texas A&amp;M University-Corpus Christi</p>
+                <div class="timeline-body">
+                    <ul>
+                        <li>
+                            Designed an API and control application for an automated pipetting system,
+                            reducing manual sample-handling time.
+                        </li>
+                        <li>
+                            Collected, recorded, and analyzed pipetting efficiency data using Python and R.
+                        </li>
+                        <li>
+                            Developed data analysis tools to support ongoing research workflows.
+                        </li>
+                    </ul>
+                    <div class="timeline-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">R</span>
+                        <span class="tag">API Design</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Technical Proficiencies</h2>
+        <p class="section-subtitle">
+            A combination of embedded systems expertise and modern software-engineering practices,
+            tailored for safety-critical aerospace development.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Embedded &amp; Systems</h3>
+                <div class="skill-list">
+                    <span class="tag">C</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">MISRA C</span>
+                    <span class="tag">CAN</span>
+                    <span class="tag">RS-485</span>
+                    <span class="tag">Ethernet</span>
+                    <span class="tag">RTOS</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Aerospace Standards</h3>
+                <div class="skill-list">
+                    <span class="tag">DO-178C</span>
+                    <span class="tag">DO-178B</span>
+                    <span class="tag">Requirements Traceability</span>
+                    <span class="tag">Formal Verification</span>
+                    <span class="tag">Configuration Management</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                <h3>Python &amp; Tooling</h3>
+                <div class="skill-list">
+                    <span class="tag">Python 3</span>
+                    <span class="tag">Ruff</span>
+                    <span class="tag">mypy</span>
+                    <span class="tag">pytest</span>
+                    <span class="tag">Coverage.py</span>
+                    <span class="tag">Click / Typer</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                <h3>CI/CD &amp; DevOps</h3>
+                <div class="skill-list">
+                    <span class="tag">GitLab CI</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">YAML Pipelines</span>
+                    <span class="tag">Git</span>
+                    <span class="tag">Bitbucket</span>
+                    <span class="tag">GitHub Actions</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fas fa-tasks"></i></div>
+                <h3>Process &amp; Collaboration</h3>
+                <div class="skill-list">
+                    <span class="tag">JIRA</span>
+                    <span class="tag">Rational DOORS</span>
+                    <span class="tag">Confluence</span>
+                    <span class="tag">Code Reviews</span>
+                    <span class="tag">Agile / Scrum</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                <h3>Graphics &amp; Simulation</h3>
+                <div class="skill-list">
+                    <span class="tag">OpenGL</span>
+                    <span class="tag">GLSL</span>
+                    <span class="tag">Compute Shaders</span>
+                    <span class="tag">Ray Tracing</span>
+                    <span class="tag">JavaScript / Canvas</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Selected Personal Projects</h2>
+        <p class="section-subtitle">
+            Graphics, simulation, and systems-level projects built outside of work.
+        </p>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <img class="project-thumb" src="images/sphereflake3.jpg" alt="Recursive ray tracer render" />
+                <div class="project-info">
+                    <h3>Recursive Ray Tracer</h3>
+                    <p>Multithreaded recursive ray tracer with super-sampling, supporting sphere-flake scenes and Phong shading. Written in C++.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++</span>
+                        <span class="tag">Multithreading</span>
+                        <span class="tag">Ray Tracing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="raytracer.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/RayTracer"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img class="project-thumb" src="images/ParticleSim1.jpg" alt="Compute shader particle simulation" />
+                <div class="project-info">
+                    <h3>Compute Shader Particle Sim</h3>
+                    <p>OpenGL compute-shader pipeline simulating millions of particles in real-time on the GPU.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">GLSL</span>
+                        <span class="tag">Compute Shaders</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="computeparticles.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/ComputeParticles"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img class="project-thumb" src="images/cloth.gif" alt="3D cloth simulation" />
+                <div class="project-info">
+                    <h3>3D Cloth Simulation</h3>
+                    <p>Randomly generated cloth-like geometry with spring-mass physics, rendered with OpenGL.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++</span>
+                        <span class="tag">OpenGL</span>
+                        <span class="tag">Physics Sim</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="3dcloth.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/3DCloth"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img class="project-thumb" src="images/flocking.png" alt="Flocking simulation" />
+                <div class="project-info">
+                    <h3>Browser Flocking Simulator</h3>
+                    <p>HTML5 Canvas and JavaScript implementation of Craig Reynolds' boids algorithm.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 Canvas</span>
+                        <span class="tag">Simulation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="flockingsim.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/FlockingSim"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img class="project-thumb" src="images/producer-consumer.JPG" alt="Producer-consumer threading" />
+                <div class="project-info">
+                    <h3>Producer-Consumer Solution</h3>
+                    <p>Multithreaded producer-consumer solution in C++ 11, designed to handle arbitrarily unbalanced thread counts.</p>
+                    <div class="timeline-tags" style="margin-bottom:1rem;">
+                        <span class="tag">C++</span>
+                        <span class="tag">Multithreading</span>
+                        <span class="tag">Concurrency</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="producerconsumer.html"><i class="fas fa-external-link-alt"></i> Details</a>
+                        <a href="https://github.com/abecker96/ProducerConsumerSolution"><i class="fab fa-github"></i> Source</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="container">
+        <p class="section-label">Education</p>
+        <h2 class="section-title">Academic Background</h2>
+
+        <div class="education-card">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="school">Texas A&amp;M University-Corpus Christi</p>
+            <p class="grad-date">Graduated December 2021</p>
+            <p>
+                Emphasis on Systems Programming. Relevant coursework included Computer Architecture,
+                Operating Systems, Computer Graphics, Computer Networking, Software Engineering,
+                Database Systems, and Data Structures.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">
+            Interested in working together or have a question? Feel free to reach out.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:BeckerAidan9@gmail.com">BeckerAidan9@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">
+                        <a href="https://www.linkedin.com/in/AidanBecker" target="_blank" rel="noopener">linkedin.com/in/AidanBecker</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <div>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">
+                        <a href="https://github.com/abecker96" target="_blank" rel="noopener">github.com/abecker96</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <div class="contact-label">Location</div>
+                    <div class="contact-value">Corpus Christi, TX</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Aidan Becker. Built with purpose.</p>
+    </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', function () {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+
+    // Subtle nav border on scroll
+    window.addEventListener('scroll', function () {
+        var nav = document.getElementById('topnav');
+        if (window.scrollY > 50) {
+            nav.style.borderBottomColor = 'rgba(56,189,248,0.15)';
+        } else {
+            nav.style.borderBottomColor = 'rgba(56,189,248,0.08)';
+        }
+    });
+</script>
 
 </body>
-
 </html>
